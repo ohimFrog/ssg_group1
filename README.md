@@ -185,10 +185,9 @@ EfficientNetV2는 CNN(Convolutional Neural Network) 기반의 모델로, 기존�
 2. MBConv와 Fused-MBConv 블록
 - MBConv: 기존 EfficientNet의 핵심 구성 요소로, MobileNet 구조에서 발전된 Mobile Inverted Bottleneck Convolution을 채택. 깊이별 연산인 Depthwise Convolution과 Squeeze and Excittation 블록으로 채널 간 관계를 모델링하여 중요한 특징을 강조
 - Fused-MBConv: 초기 레이어에서 사용되며, 계산 효율성 향상. 또한 Swish라는 부드러운 형태의 활성화 함수를 사용해 학습 안정성과 성능 향상에 기여
-3. Progressive Learning : 학습 초기에 작은 이미지 크기로 시작하여 점진적으로 크기를 증가시킴으로써, 복잡한 패턴 학습을 통해 학습 시간 단축 및 성능 유지에 기여
-4. Efficient Scaling : 복합 스케일링(Compound Scaling)을 통해 네트워크 깊이(Depth), 너비(Width), 해상도(Resolution)를 조정하여 효율성과 성능을 극대화
-5. Stochastic Depth Regularization : 각 블록에 대해 확률적으로 레이어를 드롭하여 모델의 일반화 성능을 강화
-6. Adaptive Average Pooling : 전역 풀링을 통해 공간적 크기를 줄이고, 최종 출력 채널에 연결
+3. Efficient Scaling : 복합 스케일링(Compound Scaling)을 통해 네트워크 깊이(Depth), 너비(Width), 해상도(Resolution)를 조정하여 효율성과 성능을 극대화
+4. Stochastic Depth Regularization : 각 블록에 대해 확률적으로 레이어를 드롭하여 모델의 일반화 성능을 강화
+5. Adaptive Average Pooling : 전역 풀링을 통해 공간적 크기를 줄이고, 최종 출력 채널에 연결
 
 ### <가중치 활용>
 1. Pretrained Weights : EfficientNet_V2_S_Weights 클래스를 사용해 ImageNet 데이터셋으로 사전 학습된 가중치를 활용
