@@ -213,7 +213,6 @@ EfficientNetV2는 CNN(Convolutional Neural Network) 기반의 모델로, 기존�
 EfficientNetV2-S 모델은 Early Stopping과 하이퍼파라미터 최적화를 통해 검증 및 테스트 데이터에서 높은 성능을 기록하며, ECG 데이터를 기반으로 한 심장질환 분류 작업에서 정확도와 효율성을 입증했습니다.
 
 ## ConVNext
-## ConVNext
 
 ### <모델 개요>
 ConVNeXt는 ConvNet(Convolutional Neural Network)의 최신 버전으로, Vision Transformer(ViT) 모델의 성공적인 요소를 도입하여 CNN 기반 모델의 성능과 효율성을 극대화한 아키텍처입니다. ConVNeXt는 기존 CNN 구조를 기반으로 하면서도, 더 단순하고 모듈화된 디자인을 통해 현대적인 트렌드와 잘 맞는 최적화가 이루어졌습니다.
@@ -258,48 +257,10 @@ ConVNeXt는 ConvNet(Convolutional Neural Network)의 최신 버전으로, Vision
 - 다른 모델들과 비교할 떄, 현저히 낮은 수준을 기록합니다. (Test Loss: 1.9795, Accuracy: 0.4245, F1 Score: 0.2530, Precision: 0.1802, Recall: 0.4245)
 ## 경량화
 ### 가지치기
-```
-import torch.nn.utils.prune as prune
+#가중치 80퍼센트 pruning
 
-# 가중치 40퍼센트 pruning
-for module in model.modules():
-    if isinstance(module, nn.Conv2d):
-        prune.l1_unstructured(module, name='weight', amount=0.4)
-# 가중치 고정 
-for module in model.modules():
-    if isinstance(module, nn.Conv2d):
-        prune.remove(module, 'weight')
 ```
 ### 양자화
-```
-# dynamic quantization 적용
-quantized_model = torch.quantization.quantize_dynamic(
-    model, {nn.Linear}, dtype=torch.qint8
-)
-# static quantizaion 적용
-model.eval()
-model.qconfig = torch.quantization.get_default_qconfig('fbgemm')
-torch.quantization.prepare(model, inplace=True)
-
-# Calibration 및 Quantization 적용
-for images, _ in dataloader:
-    model(images)
-torch.quantization.convert(model, inplace=True)
-model.qconfig = torch.quantization.get_default_qat_qconfig('fbgemm')
-torch.quantization.prepare_qat(model, inplace=True)
-
 #Quantizaion-aware training 적용 하여 모델 훈련
-model.train()
-for epoch in range(num_epochs):
-    for images, labels in dataloader:
-        outputs = model(images)
-        loss = criterion(outputs, labels)
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
 
-# Quantization 적용
-model.eval()
-torch.quantization.convert(model, inplace=True)
-```
 
