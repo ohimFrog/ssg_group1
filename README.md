@@ -259,8 +259,13 @@ ConVNeXt는 ConvNet(Convolutional Neural Network)의 최신 버전으로, Vision
 ### 가지치기
 #가중치 80퍼센트 pruning
 
-```
 ### 양자화
 #Quantizaion-aware training 적용 하여 모델 훈련
+
+###성능비교
+#### EFFICIENTNET_V2S
+#### Pruning 적용 모델
+#### Quanitzation 적용 모델
+#### Pruning, Quantization 적용 모델
 
 
