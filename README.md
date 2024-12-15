@@ -257,10 +257,10 @@ ConVNeXt는 ConvNet(Convolutional Neural Network)의 최신 버전으로, Vision
 - 다른 모델들과 비교할 떄, 현저히 낮은 수준을 기록합니다. (Test Loss: 1.9795, Accuracy: 0.4245, F1 Score: 0.2530, Precision: 0.1802, Recall: 0.4245)
 ## 경량화
 ### 가지치기
-#가중치 80퍼센트 pruning
+가중치 80퍼센트 pruning
 
 ### 양자화
-#Quantizaion-aware training 적용 하여 모델 훈련
+Quantizaion-aware training 적용 하여 모델 훈련
 
 ### 성능비교
 #### EFFICIENTNET_V2S
