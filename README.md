@@ -83,6 +83,8 @@ DataLoader를 통해 배치 크기 32로 셔플된 데이터를 사용하였습�
 
 ## Work Environment
 사용 환경 : Colab
+
+
 사용 GPU : A100
 
 
