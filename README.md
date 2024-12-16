@@ -81,6 +81,10 @@ torchvision.transforms를 활용하여 데이터를 텐서로 변환하고 크�
 ### 9. DataLoader
 DataLoader를 통해 배치 크기 32로 셔플된 데이터를 사용하였습니다.
 
+## Work Environment
+사용 환경 : Colab
+사용 GPU : A100
+
 
 ## ViT(Vision Transformer)
 Vision Transformer (ViT) 모델 설명
