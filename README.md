@@ -248,7 +248,7 @@ ConVNeXt는 ConvNet(Convolutional Neural Network)의 최신 버전으로, Vision
   
 ### <학습 및 평가>
 
-
+모델 중 efficientnet의 성능을 개선하기 위해 가지치기와 양자화를 적용하였습니다.
 모델 학습 결과를 보면, 다음과 같은 문제들이 확인됩니다:
 1. 성능 정체
 - Validation Accuracy와 F1 Score: Epoch이 증가해도 거의 변화가 없으며, Accuracy는 42.78%, F1 Score는 25.63% 수준에서 정체되고 있습니다.
