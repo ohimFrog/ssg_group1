@@ -257,10 +257,20 @@ ConVNeXt는 ConvNet(Convolutional Neural Network)의 최신 버전으로, Vision
 - 다른 모델들과 비교할 떄, 현저히 낮은 수준을 기록합니다. (Test Loss: 1.9795, Accuracy: 0.4245, F1 Score: 0.2530, Precision: 0.1802, Recall: 0.4245)
 ## 경량화
 ### 가지치기
-가중치 80퍼센트 pruning
+가중치 70% 가지치기
+- L1 Unstructured Pruning을 통해 CNN 계층(Conv2d)의 가중치 중 70%를 L1-norm 기준으로 제거
+
+
+가중치 고정
+- Pruning 후 불필요한 매핑 제거로 모델 크기를 축소하고 계산 효율성 향상
+
 
 ### 양자화
-Quantizaion-aware training 적용 하여 모델 훈련
+
+양자화 인지 학습 (QAT, Quantization-Aware Training):
+: 훈련 단계에서 Quantization-aware training 적용하여 양자화로 인한 성능 손실 최소화
+: FBGEMM 백엔드 기반의 최적화된 훈련으로 정확도 유지
+
 
 ### 성능비교
 #### EFFICIENTNET_V2S
