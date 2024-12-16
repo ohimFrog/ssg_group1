@@ -273,9 +273,8 @@ ConVNeXt는 ConvNet(Convolutional Neural Network)의 최신 버전으로, Vision
 
 
 ### 성능비교
-#### EFFICIENTNET_V2S
+#### EFFICIENTNET_V2S : 기존모델
 #### Pruning 적용 모델
-#### Quanitzation 적용 모델
 #### Pruning, Quantization 적용 모델
 
 
