@@ -247,14 +247,6 @@ ConVNeXt는 ConvNet(Convolutional Neural Network)의 최신 버전으로, Vision
 - Weight Decay : 0.05
   
 ### <학습 및 평가>
-
-모델 중 efficientnet의 성능을 개선하기 위해 가지치기와 양자화를 적용하였습니다.
-모델 학습 결과를 보면, 다음과 같은 문제들이 확인됩니다:
-1. 성능 정체
-- Validation Accuracy와 F1 Score: Epoch이 증가해도 거의 변화가 없으며, Accuracy는 42.78%, F1 Score는 25.63% 수준에서 정체되고 있습니다.
-- Validation Loss: 약간의 변동은 있지만 크게 개선되지 않고 거의 같은 수준에서 머물러 있습니다.
-2. Test 결과
-- 다른 모델들과 비교할 떄, 현저히 낮은 수준을 기록합니다. (Test Loss: 1.9795, Accuracy: 0.4245, F1 Score: 0.2530, Precision: 0.1802, Recall: 0.4245)
 ## 경량화
 ### 가지치기
 가중치 70% 가지치기
@@ -268,7 +260,11 @@ ConVNeXt는 ConvNet(Convolutional Neural Network)의 최신 버전으로, Vision
 ### 양자화
 
 양자화 인지 학습 (QAT, Quantization-Aware Training):
+
+
 : 훈련 단계에서 Quantization-aware training 적용하여 양자화로 인한 성능 손실 최소화
+
+
 : FBGEMM 백엔드 기반의 최적화된 훈련으로 정확도 유지
 
 
