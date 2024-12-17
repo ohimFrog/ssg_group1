@@ -1,11 +1,4 @@
 # 심층신경망개론 Final Project Group1
-models 폴더 - model 파일 
-
-pth 폴더 - main.ipynb를 실행하기 위한 pth 파일
-
-main.ipynb - efficientnet_v2s training, pruned_model training, 성능 지표
-
-quant_main.ipynb - quantization training 파일
 
 
 ## 📜프로젝트 소개
